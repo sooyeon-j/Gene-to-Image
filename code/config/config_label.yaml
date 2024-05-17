@@ -1,0 +1,65 @@
+data:
+  data: ADNI
+  ae_dataset_path: '/root/jsuyeon/dataset/img_all/gray'
+  dm_dataset_path: /root/jsuyeon/dataset/img_with_gene/ADNI1_GO2'
+  dm_snp_path: '/root/jsuyeon/dataset/adni1_go2_qc_dropna_with_apoe_adnimerge_mri.csv'
+  # sample_dataset_path: '/root/proj/dataset/img_with_gene/ADNI1_GO2/bone'
+  # sample_snp_path: '/root/proj/dataset/adni1_and_2_qc_dropna_with_apoe_adnimerge_mri.csv'
+  ae_batch_size: 128
+  dm_batch_size: 128
+  img_size: 128
+  width: 256
+  height: 256
+
+train:
+  ae_epochs: 1000
+  ae_val_interval: 100
+  autoencoder_warm_up_n_epochs: 100
+  diff_epochs: 2000
+  diff_val_interval: 500
+  timesteps: 1000
+  lr: 1.0e-4
+  weight_decay: 0.001
+  beta_start: 1.0e-4
+  beta_end: 0.02
+  use_wandb: True
+
+autoencoder:
+  spatial_dims: 2
+  in_channels: 3
+  out_channels: 3
+  num_channels: [128, 256, 256]
+  latent_channels: 3
+  num_res_blocks: 2
+  attention_levels: [False, True, True]
+  with_encoder_nonlocal_attn: False
+  with_decoder_nonlocal_attn: False
+
+diffusion:
+  spatial_dims: 2
+  in_channels: 3
+  out_channels: 3
+  num_channels: [128, 256, 512]
+  num_res_blocks: 2
+  attention_levels: [True, True, True]
+  num_head_channels: [32, 32, 32]
+  with_conditioning: False
+  cross_attention_dim: 
+  num_class_embeds: 4
+  num_context_embeds: 
+
+sample:
+  epochs: 10
+  batch_size: 15
+  beta_start: 1.0e-4
+  beta_end: 0.02
+  use_wandb: True
+  sample_steps: 1000
+  guidance_scale: 0
+
+classify:
+  dataset_path: './results/Jan05-11:00/samples/Jan05-13:12:04/test'
+  ckpt: './baseline/models_bl/Jan08-17:00/model.pt'
+  batch_size: 1
+  use_wandb: True
+  
