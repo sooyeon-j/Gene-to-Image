@@ -1,0 +1,51 @@
+CONFIG_NAME: 'stageII'
+
+DATASET_NAME: 'mri'
+GPU_ID: '0,1'
+Z_DIM: 100
+NET_G: "../output/mri_stageII_Feb25-1100/Model/netG_epoch_200.pth"
+# STAGE1_G: '../output/mri_stageI_Feb25-1100/Model/netG_epoch_200.pth'
+NET_D: "../output/mri_stageII_Feb25-1100/Model/netD_epoch_last.pth"
+DATA_DIR: '/root/proj/dataset/img_with_gene/ADNI1_GO2/gray'
+# IMG_HEIGHT: 224
+# IMG_WIDTH: 192
+WORKERS: 6
+IMSIZE: 256
+STAGE: 2
+USE_WANDB: True
+
+TRAIN:
+    FLAG: 'sample'
+    BATCH_SIZE: 128
+    MAX_EPOCH: 200
+    LR_DECAY_EPOCH: 20
+    SNAPSHOT_INTERVAL: 50
+    DISCRIMINATOR_LR: 0.0002
+    DISCRIMINATOR_COEFF:
+        beta1: 0.9
+        beta2: 0.999
+    GENERATOR_LR: 0.0002
+    GENERATOR_COEFF:
+        beta1: 0.9
+        beta2: 0.999
+    COEFF:
+      KL: 2.0
+
+GAN:
+    CONDITION_DIM: 128
+    DF_DIM: 64
+    GF_DIM: 192
+    R_NUM: 2
+
+SNP:
+    DIMENSION: 50
+
+SAMPLE:
+    EPOCH: 10
+
+classify:
+  dataset_path: '/root/proj3/StackGAN-Pytorch/output/mri_stageII_Feb14-2300/Sample/Feb15-05:00:05/test'
+  ckpt: '/root/proj3/StackGAN-Pytorch/code/baseline/models_bl/baseline_256/model.pt'
+  batch_size: 1
+  use_wandb: True
+  

@@ -1,0 +1,110 @@
+/root/jsuyeon/yujees/AttnGAN/code/datasets.py:132: FutureWarning: The 'delim_whitespace' keyword in pd.read_csv is deprecated and will be removed in a future version. Use ``sep='\s+'`` instead
+  df_bounding_boxes = pd.read_csv(
+/root/jsuyeon/yujees/AttnGAN/code/datasets.py:137: FutureWarning: The 'delim_whitespace' keyword in pd.read_csv is deprecated and will be removed in a future version. Use ``sep='\s+'`` instead
+  df_filenames = pd.read_csv(filepath, delim_whitespace=True, header=None)
+/opt/conda/envs/diffusion/lib/python3.9/site-packages/torchvision/models/inception.py:43: FutureWarning: The default weight initialization of inception_v3 will be changed in future releases of torchvision. If you wish to keep the old behavior (which leads to long initialization times due to scipy/scipy#11299), please set init_weights=True.
+  warnings.warn(
+/opt/conda/envs/diffusion/lib/python3.9/site-packages/torch/nn/modules/rnn.py:83: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.5 and num_layers=1
+  warnings.warn("dropout option adds dropout after all but last "
+/root/jsuyeon/yujees/AttnGAN/code/miscc/utils.py:318: UserWarning: nn.init.orthogonal is now deprecated in favor of nn.init.orthogonal_.
+  nn.init.orthogonal(m.weight.data, 1.0)
+/root/jsuyeon/yujees/AttnGAN/code/miscc/utils.py:313: UserWarning: nn.init.orthogonal is now deprecated in favor of nn.init.orthogonal_.
+  nn.init.orthogonal(m.weight.data, 1.0)
+Using config:
+{'B_VALIDATION': False,
+ 'CONFIG_NAME': 'attn2',
+ 'CUDA': False,
+ 'DATASET_NAME': 'mri',
+ 'DATA_DIR': '../data/birds',
+ 'GAN': {'B_ATTENTION': True,
+         'B_DCGAN': False,
+         'CONDITION_DIM': 100,
+         'DF_DIM': 64,
+         'GF_DIM': 32,
+         'R_NUM': 2,
+         'Z_DIM': 100},
+ 'GPU_ID': 0,
+ 'RNN_TYPE': 'LSTM',
+ 'TEXT': {'CAPTIONS_PER_IMAGE': 10, 'EMBEDDING_DIM': 256, 'WORDS_NUM': 18},
+ 'TRAIN': {'BATCH_SIZE': 20,
+           'B_NET_D': True,
+           'DISCRIMINATOR_LR': 0.0002,
+           'ENCODER_LR': 0.0002,
+           'FLAG': True,
+           'GENERATOR_LR': 0.0002,
+           'MAX_EPOCH': 600,
+           'NET_E': '../DAMSMencoders/mri/text_encoder200.pth',
+           'NET_G': '',
+           'RNN_GRAD_CLIP': 0.25,
+           'SMOOTH': {'GAMMA1': 4.0,
+                      'GAMMA2': 5.0,
+                      'GAMMA3': 10.0,
+                      'LAMBDA': 5.0},
+           'SNAPSHOT_INTERVAL': 50},
+ 'TREE': {'BASE_SIZE': 64, 'BRANCH_NUM': 3},
+ 'WORKERS': 4}
+Total filenames:  11788 001.Black_footed_Albatross/Black_Footed_Albatross_0046_18.jpg
+Load filenames from: ../data/birds/train/filenames.pickle (8855)
+Load filenames from: ../data/birds/test/filenames.pickle (2933)
+Load from:  ../data/birds/captions.pickle
+Load pretrained model from  https://download.pytorch.org/models/inception_v3_google-1a9a5a14.pth
+Load image encoder from: ../DAMSMencoders/mri/image_encoder200.pth
+Load text encoder from: ../DAMSMencoders/mri/text_encoder200.pth
+# of netsD 3
+/opt/conda/envs/diffusion/lib/python3.9/site-packages/torch/nn/modules/module.py:1511: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  return self._call_impl(*args, **kwargs)
+/root/jsuyeon/yujees/AttnGAN/code/trainer.py:340: UserWarning: This overload of add_ is deprecated:
+	add_(Number alpha, Tensor other)
+Consider using one of the following signatures instead:
+	add_(Tensor other, *, Number alpha) (Triggered internally at /opt/conda/conda-bld/pytorch_1704987277512/work/torch/csrc/utils/python_arg_parser.cpp:1630.)
+  avg_p.mul_(0.999).add_(0.001, p.data)
+Traceback (most recent call last):
+  File "/root/jsuyeon/yujees/AttnGAN/code/main.py", line 166, in <module>
+    algo.train()
+  File "/root/jsuyeon/yujees/AttnGAN/code/trainer.py", line 268, in train
+    data = next(data_iter)
+  File "/opt/conda/envs/diffusion/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 631, in __next__
+    data = self._next_data()
+  File "/opt/conda/envs/diffusion/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1329, in _next_data
+    idx, data = self._get_data()
+  File "/opt/conda/envs/diffusion/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1295, in _get_data
+    success, data = self._try_get_data()
+  File "/opt/conda/envs/diffusion/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1133, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+  File "/opt/conda/envs/diffusion/lib/python3.9/multiprocessing/queues.py", line 113, in get
+    if not self._poll(timeout):
+  File "/opt/conda/envs/diffusion/lib/python3.9/multiprocessing/connection.py", line 257, in poll
+    return self._poll(timeout)
+  File "/opt/conda/envs/diffusion/lib/python3.9/multiprocessing/connection.py", line 424, in _poll
+    r = wait([self], timeout)
+  File "/opt/conda/envs/diffusion/lib/python3.9/multiprocessing/connection.py", line 931, in wait
+    ready = selector.select(timeout)
+  File "/opt/conda/envs/diffusion/lib/python3.9/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "main.py", line 3, in <module>
+    from miscc.config import cfg, cfg_from_file
+  File "/root/jsuyeon/yujees/AttnGAN/code/miscc/config.py", line 6, in <module>
+    from easydict import EasyDict as edict
+ModuleNotFoundError: No module named 'easydict'
+Traceback (most recent call last):
+  File "main.py", line 3, in <module>
+    from miscc.config import cfg, cfg_from_file
+  File "/root/jsuyeon/yujees/AttnGAN/code/miscc/config.py", line 6, in <module>
+    from easydict import EasyDict as edict
+ModuleNotFoundError: No module named 'easydict'
+Using cache found in /root/.cache/torch/hub/Warvito_radimagenet-models_main
+Traceback (most recent call last):
+  File "/root/jsuyeon/yujees/AttnGAN/code/main.py", line 101, in <module>
+    cfg_from_file(args.cfg_file)
+  File "/root/jsuyeon/yujees/AttnGAN/code/miscc/config.py", line 106, in cfg_from_file
+    with open(filename, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'code/cfg/mri_attn1_6.yml'
+Using cache found in /root/.cache/torch/hub/Warvito_radimagenet-models_main
+Traceback (most recent call last):
+  File "/root/jsuyeon/yujees/AttnGAN/code/main.py", line 101, in <module>
+    cfg_from_file(args.cfg_file)
+  File "/root/jsuyeon/yujees/AttnGAN/code/miscc/config.py", line 106, in cfg_from_file
+    with open(filename, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/cfg/mri_attn1_6.yml'

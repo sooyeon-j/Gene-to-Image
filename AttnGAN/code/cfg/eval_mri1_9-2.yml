@@ -1,0 +1,30 @@
+CONFIG_NAME: 'eval_mri1_9_beta0.9'
+
+DATASET_NAME: 'mri'
+DATA_DIR: ''
+GPU_ID: 3
+WORKERS: 1
+
+B_VALIDATION: True  # False
+TREE:
+    BRANCH_NUM: 3
+
+
+TRAIN:
+    FLAG: False
+    NET_G: '/root/jsuyeon/yujees/AttnGAN/output/mri_attn1_9_2024_03_04_08_39_23/Model/netG_epoch_600.pth'
+    B_NET_D: False
+    BATCH_SIZE: 20
+    NET_E: '/root/jsuyeon/yujees/AttnGAN/DAMSMencoders/mri/text_encoder200.pth'
+
+
+GAN:
+    DF_DIM: 64
+    GF_DIM: 32
+    Z_DIM: 100
+    R_NUM: 2
+
+TEXT:
+    EMBEDDING_DIM: 256
+    CAPTIONS_PER_IMAGE: 10
+    WORDS_NUM: 25

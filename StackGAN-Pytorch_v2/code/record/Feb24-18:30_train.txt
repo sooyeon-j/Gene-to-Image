@@ -1,0 +1,44 @@
+nohup: ignoring input
+Field "model_server_url" has conflict with protected namespace "model_".
+
+You may be able to resolve this warning by setting `model_config['protected_namespaces'] = ()`.
+Valid config keys have changed in V2:
+* 'schema_extra' has been renamed to 'json_schema_extra'
+wandb: Currently logged in as: sydk-jeon. Use `wandb login --relogin` to force relogin
+wandb: wandb version 0.16.3 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.16.2
+wandb: Run data is saved locally in /root/proj3/StackGAN-Pytorch/code/wandb/run-20240224_101610-96xic8zo
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run magic-surf-256
+wandb: ⭐️ View project at https://wandb.ai/sydk-jeon/MRI_GAN
+wandb: 🚀 View run at https://wandb.ai/sydk-jeon/MRI_GAN/runs/96xic8zo
+Using cache found in /root/.cache/torch/hub/Warvito_radimagenet-models_main
+Load from:  ../output/mri_stageII_Feb24-1830/Model/netG_epoch_200.pth
+Load from:  ../output/mri_stageII_Feb24-1830/Model/netD_epoch_last.pth
+The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=None`.
+PSNR Scores :15.895
+FID by imagenet Scores :194.787
+FID by radimagenet Scores :8.642
+MS-SSIM Metric :0.824
+SSIM Metric :0.795
+wandb: - 1.780 MB of 1.780 MB uploadedwandb: \ 1.780 MB of 1.780 MB uploadedwandb: | 1.780 MB of 1.780 MB uploadedwandb: / 1.780 MB of 1.780 MB uploadedwandb: - 1.780 MB of 1.780 MB uploadedwandb: \ 1.803 MB of 1.803 MB uploadedwandb: | 1.803 MB of 1.803 MB uploadedwandb: / 1.803 MB of 1.803 MB uploadedwandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:     FID Scores ▄▅▇▃▅▆█▄▃▁
+wandb: FID Scores_ori ▅▅▆▃▁▃▆█▃▇
+wandb: MS-SSIM Metric ▆▅▄▁▂█▄▄▄▂
+wandb:    PSNR Scores ▁▆▁▃▇█▅▆██
+wandb:           SSIM ▆▅▄▁▃█▄▅▄▂
+wandb: 
+wandb: Run summary:
+wandb:     FID Scores 8.43577
+wandb: FID Scores_ori 201.04751
+wandb: MS-SSIM Metric 0.81676
+wandb:    PSNR Scores 16.03544
+wandb:           SSIM 0.78823
+wandb: 
+wandb: 🚀 View run magic-surf-256 at: https://wandb.ai/sydk-jeon/MRI_GAN/runs/96xic8zo
+wandb: Synced 6 W&B file(s), 20 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20240224_101610-96xic8zo/logs
